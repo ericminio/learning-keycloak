@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ericminio/learning-keycloack.svg?branch=master)](https://travis-ci.org/ericminio/learning-keycloack)
+
 assuming 
 * a keycloack server is running on 8080
 * ... with a realm named efiling
