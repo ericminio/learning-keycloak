@@ -15,5 +15,6 @@ before_script:
     - docker-compose up -d keycloak
     - $TRAVIS_BUILD_DIR/keycloak/wait-for-keycloak.sh
     - export PATH=$PATH:$TRAVIS_BUILD_DIR/webdriver/linux
+    - yarn
 script:
     - npm run create-realm
