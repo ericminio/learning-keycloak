@@ -7,7 +7,8 @@ install:
     - node --version
 before_script:
     - chmod +x $TRAVIS_BUILD_DIR/keycloak/wait-for-keycloak.sh
-    - docker-compose up -d keycloak    
-script:
+    - docker-compose up -d keycloak
     - $TRAVIS_BUILD_DIR/keycloak/wait-for-keycloak.sh
-
+    - export PATH=$PATH:$TRAVIS_BUILD_DIR/webdriver/linux
+script:
+    - npm run create-realm
