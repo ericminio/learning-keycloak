@@ -1,6 +1,11 @@
+dist: trusty
 language: node_js
+node_js:
+  - "10.16.0"
 services:
     - docker
+env:
+  - MOZ_HEADLESS=1
 install:
     - docker pull jboss/keycloak:11.0.2
     - docker images
