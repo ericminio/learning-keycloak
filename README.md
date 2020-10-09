@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ericminio/learning-keycloack.svg?branch=master)](https://travis-ci.org/ericminio/learning-keycloack)
+[![Build Status](https://travis-ci.org/ericminio/learning-keycloak.svg?branch=master)](https://travis-ci.org/ericminio/learning-keycloak)
 
 assuming 
 * a keycloack server is running on 8080
