@@ -1,6 +1,6 @@
 const { expect } = require('chai')
 const { Builder, By } = require('selenium-webdriver')
-const firefox = ()=> new Builder().forBrowser('firefox').build()
+const firefox = async ()=> await new Builder().forBrowser('firefox').build()
 
 
 describe('Creating realm', ()=> {
@@ -8,8 +8,8 @@ describe('Creating realm', ()=> {
     let driver
     let element
 
-    beforeEach(()=> {
-        driver = firefox()
+    beforeEach(async ()=> {
+        driver = await firefox()
     })
     afterEach(async ()=> {
         await driver.quit();
@@ -22,6 +22,7 @@ describe('Creating realm', ()=> {
         await element.click()
         await driver.sleep(1 * 1000)
         await enterCredentials(driver, { username:'admin', password:'admin' })
+        await driver.sleep(1 * 1000)
 
         element = await driver.findElement(By.css('.realm-selector'))
         const actions = driver.actions({bridge: true})
@@ -29,7 +30,7 @@ describe('Creating realm', ()=> {
         element = await driver.findElement(By.css('a[href*="create/realm"]'))
         await element.click()
         await driver.sleep(1 * 1000)
-        
+
         element = await driver.findElement(By.css('#name'))
         await element.sendKeys('this-name')
         element = await driver.findElement(By.css('button[kc-save]'))
